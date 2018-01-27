@@ -101,8 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #page-profile .profile {
     border: 5px solid #333;
-    width: 225px;
-    height: 225px;
+    width: 100%;
     margin: 0 20px 20px 0;
 }
 #page-skills {
@@ -131,7 +130,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Portfolio
    ========================================================================== */
-
 #grid-controls-wrapper {
     text-align: center;
     float: none;
@@ -406,12 +404,18 @@ label.valid {
     display: inline-block;
     line-height: 150px;
     z-index: 2;
+    font-size: 4vmax;
 }
 .percent:after {
-    content: '%';
     margin-left: 0.1em;
     font-size: .8em;
 }
+
+.fa-html5{
+  color: #e84c31;
+}
+
+
 /* ==========================================================================
    Social icons
    ========================================================================== */
@@ -459,27 +463,17 @@ label.valid {
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
 }
-.btn-twitter:hover {
-    color: #2BA9E0;
-}
-.btn-facebook:hover {
-    color: #204385;
-}
-.btn-dribbble:hover {
-    color: #D92C85;
-}
-.btn-instagram:hover {
-    color: #BAB1A8;
-}
 .btn-linkedin:hover {
     color: #015786;
 }
-.btn-pinterest:hover {
-    color: #CA2128;
+
+.btn-github:hover {
+    color: #000000;
 }
-.btn-google:hover {
-    color: #D3492C;
+.btn-etsy:hover {
+    color: #f26a15;
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
