@@ -101,8 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #page-profile .profile {
     border: 5px solid #333;
-    width: 225px;
-    height: 225px;
+    width: 100%;
     margin: 0 20px 20px 0;
 }
 #page-skills {
@@ -131,6 +130,50 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Portfolio
    ========================================================================== */
+.page-portfolio .portfolio-div{
+    position: relative;
+    margin: 3% 0; 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+ }
+
+ .portfolio-div:hover .overlay {
+    opacity: .9;
+    cursor: pointer;
+  }
+
+
+.portfolio-div img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+  
+.portfolio-div hr {
+    margin: 5px 0; 
+}
+.text {
+    color: white;
+    padding: 2%;
+    position: absolute;
+    top: 2%;
+    text-align: left;
+}
+
+.text p:last-child {
+    text-align: center;
+}
 
 #grid-controls-wrapper {
     text-align: center;
@@ -406,12 +449,18 @@ label.valid {
     display: inline-block;
     line-height: 150px;
     z-index: 2;
+    font-size: 4vmax;
 }
 .percent:after {
-    content: '%';
     margin-left: 0.1em;
     font-size: .8em;
 }
+
+.fa-html5{
+  color: #e84c31;
+}
+
+
 /* ==========================================================================
    Social icons
    ========================================================================== */
@@ -459,27 +508,17 @@ label.valid {
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
 }
-.btn-twitter:hover {
-    color: #2BA9E0;
-}
-.btn-facebook:hover {
-    color: #204385;
-}
-.btn-dribbble:hover {
-    color: #D92C85;
-}
-.btn-instagram:hover {
-    color: #BAB1A8;
-}
 .btn-linkedin:hover {
     color: #015786;
 }
-.btn-pinterest:hover {
-    color: #CA2128;
+
+.btn-github:hover {
+    color: #000000;
 }
-.btn-google:hover {
-    color: #D3492C;
+.btn-etsy:hover {
+    color: #f26a15;
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
