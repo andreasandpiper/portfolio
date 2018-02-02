@@ -130,6 +130,51 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Portfolio
    ========================================================================== */
+.page-portfolio .portfolio-div{
+    position: relative;
+    margin: 3% 0; 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+ }
+
+ .portfolio-div:hover .overlay {
+    opacity: .9;
+    cursor: pointer;
+  }
+
+
+.portfolio-div img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+  
+.portfolio-div hr {
+    margin: 5px 0; 
+}
+.text {
+    color: white;
+    padding: 2%;
+    position: absolute;
+    top: 2%;
+    text-align: left;
+}
+
+.text p:last-child {
+    text-align: center;
+}
+
 #grid-controls-wrapper {
     text-align: center;
     float: none;
