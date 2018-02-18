@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     text-align: center;
+    background-image: url('../img/slider/01.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -139,25 +140,30 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 2%;
     right: 0;
     height: 100%;
-    width: 100%;
+    width: 96%;
     opacity: 0;
-    transition: .5s ease;
-    background-color: #000000;
+    transition: .3s ease;
+    background-color: #3498db;
  }
 
  .portfolio-div:hover .overlay {
-    opacity: .9;
+    opacity: 1;
     cursor: pointer;
   }
 
+.portfolio-div i{
+    font-size: 4vmin; 
+    margin: 5px; 
+}
 
 .portfolio-div img{
   display: block;
   width: 100%;
   height: auto;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
 }
   
 .portfolio-div hr {
@@ -165,10 +171,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .text {
     color: white;
-    padding: 2%;
+    padding: 5%;
     position: absolute;
-    top: 2%;
-    text-align: left;
+    text-align: center;
+    width: 100%;
 }
 
 .text p:last-child {
@@ -252,83 +258,26 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0s;
 }
 /* ==========================================================================
-   Vegas slider
+   Portfolio Modal
    ========================================================================== */
 
-.vegas-loading {
-    border-radius: 10px;
-    background: #000;
-    background: rgba(0, 0, 0, 0.7);
-    background: url(../img/loading.gif) no-repeat center center;
-    height: 32px;
-    left: 20px;
-    position: fixed;
-    top: 20px;
-    width: 32px;
-    z-index: 0;
+h2.modal-title {
+    text-align: center;
+    text-transform: capitalize;
 }
-.vegas-overlay {
-    background: transparent url(../img/overlays/16.png);
-    opacity: 0.5;
 
+.modal-body div {
+    text-align: center
 }
-.vegas-background {
-    -ms-interpolation-mode: bicubic;
-    image-rendering: optimizeQuality;
-    max-width: none !important;
-    /* counteracts global img modification by twitter bootstrap library */
 
-    z-index: -2;
+.modal-body img {
+    padding: 0 20%; 
 }
-.vegas-overlay, .vegas-background {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+
+.modal-dialog {
+    width: 50%; 
 }
-.slider-controls {
-    opacity: 0;
-    padding: 0;
-    margin: 0;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-.slider-controls li {
-    list-style: none;
-}
-#page-welcome:hover .slider-controls {
-    opacity: 1;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-.slider-controls li a {
-    position: absolute;
-    z-index: 10;
-    top: 40%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
-.next {
-    background: url("../img/next.png");
-    margin-right: 70px;
-    right: 0;
-    opacity: 0.3;
-}
-.prev {
-    background: url("../img/prev.png");
-    margin-left: 70px;
-    left: 0;
-    opacity: 0.3;
-}
-.next:hover, .prev:hover {
-    opacity: 1;
-}
+
 /* ==========================================================================
    Dividers
    ========================================================================== */
@@ -541,10 +490,17 @@ label.valid {
    Responsive Settings
    ========================================================================== */
 
+
 @media(max-width:992px) {
     #page-profile .profile {
         margin: 0 auto 20px auto;
     }
+    .modal-lg
+    {
+        width: 900px;
+        height: 900px; /* control height here */
+    }
+
 }
 @media (max-width: 479px) {
     #page-welcome header h1 {
