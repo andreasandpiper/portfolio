@@ -101,17 +101,6 @@ $(document).ready(function () {
         easing: "swing"
     });
 
-    /* Charts*/
-
-    // $('.chart').waypoint(function () {
-    //     $(this).easyPieChart({
-    //         barColor: '#3498db',
-    //         easing: 'easeOutBounce',
-    //     });
-    // }, {
-    //     triggerOnce: true,
-    //     offset: 'bottom-in-view'
-    // });
 
     $('.overlay').on('click', showProjectInfo)
 

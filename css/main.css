@@ -490,38 +490,6 @@ label.valid {
     padding: 4px 18px;
 }
 
-/* ==========================================================================
-   Charts
-   ========================================================================== */
-
-.chart {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-}
-
-.chart canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.chart h3 {
-    font-size: 1em;
-}
-
-.percent {
-    display: inline-block;
-    line-height: 150px;
-    z-index: 2;
-    font-size: 4vmax;
-}
-
-.percent:after {
-    margin-left: 0.1em;
-    font-size: .8em;
-}
-
 .fa-html5 {
     color: #e84c31;
 }
