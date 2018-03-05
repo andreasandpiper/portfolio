@@ -331,6 +331,7 @@ h2.modal-title {
 
 .modal-body {
     padding: 0 5%;
+    padding-bottom: 5%;
 }
 
 .modal-dialog {
