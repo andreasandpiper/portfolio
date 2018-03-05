@@ -329,7 +329,7 @@ h2.modal-title {
     text-align: center;
 }
 
-.modal-body img {
+.modal-body {
     padding: 0 5%;
 }
 
@@ -339,7 +339,15 @@ h2.modal-title {
 
 h4.demos {
     text-align: center;
-    color: #3498db
+}
+
+div.modal-body>h4>a.live,
+div.modal-body>h4>a.github {
+    color: #757575;
+}
+
+h4>a:hover {
+    text-decoration: underline;
 }
 
 .modal-body h3,
@@ -350,6 +358,14 @@ h4.demos {
 .description p {
     line-height: 1.3;
     margin: 15px 0;
+}
+
+.modal-header {
+    border-bottom: 0px solid #ffffff;
+}
+
+.close {
+    font-size: 30px;
 }
 
 /* ==========================================================================
@@ -574,6 +590,14 @@ label.valid {
 
 .btn-etsy:hover {
     color: #f26a15;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.contact-info>p>a {
+    color: #ffffff;
 }
 
 /* ==========================================================================

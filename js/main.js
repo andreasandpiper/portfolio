@@ -3,8 +3,8 @@ var portfolioInfo = {
         'title': 'Calculator',
         'description': '<p>Designed and developed a basic calculator to compute basic calculations using order of operations. The user input displays on the screen and computes the input when the equal sign is clicked. Each button creates an object which is filtered before calculating. The filtered input then uses objects to calculate the order of operations then uses function for the different operands. I use operands as keys to perform basic subtraction, addition, multiplication and division. </p>',
         'technologies': 'HTML, CSS, Javascript, JQuery',
-        'liveSiteUrl': '#',
-        'githubUrl': '#',
+        'liveSiteUrl': 'projects/calculator/',
+        'githubUrl': 'https://github.com/andreasandpiper/calculator-javascript',
         'imageSrc': 'img/images/calculator.png'
     },
     'memoryMatch': {
@@ -35,14 +35,14 @@ var portfolioInfo = {
         'title': 'Beets & Eats',
         'description': '<p>Beets and Eats is an application to help users plan an evening out on the town. To use the application, users enter a location and date to populate a visual list of the events happening on that date. Links to the events and Ticketmaster are available for each event.  Once an event is chosen, the map will populate many nearby food and drink locations. When a location a click, more information including links are provided. </p><p> My contribution to this 2-day Hackathon project was using information from Ticketmaster and Yelp to populate a Google map with nearby locations. I used closures to populate the sidebar with more information once the user clicked an icon as well as displaying basic information in a label window.  </p><p>Beets and Eats uses data from GoogleMaps, Ticketmaster and Yelp to populate a map with restaurants and bars surrounding a desired event venue. </p>',
         'technologies': 'HTML, CSS, JQuery, AJAX, Google Maps API, Yelp API, Ticketmaster API, Bootstrap',
-        'liveSiteUrl': '#',
+        'liveSiteUrl': 'projects/beetsandeats/',
         'githubUrl': 'https://github.com/andreasandpiper/beetsandeats',
         'imageSrc': 'img/images/beetsandeats.png'
     },
     'closeyourtabs': {
         'title': 'Close Your Tabs',
         'description': '<p>Close Your Tabs incorporates a Chrome extension to keep track of how long a tab has been inactive and active. We display your current tabs from all windows and color them according to the amount of time elapsed since the tab was used. This tools helps you see which tabs are not being used in a colorful manner.</p><p> My contribution to this program was developing the Chrome Extension and wrote the FAQ component in React. I built the extension using an Agile approach to complete a basic prototype to then focus on each next feature. The extension uses Chrome Platform APIs to listen for events within the browser, such as creating a new tab, moving a tab, deleting a tab, etc. I weaved the APIs together to create a system which keeps track of all the current tabs and the time on inactivation. </p><p>The web application is an external view of the extension, giving the user more features to manage their tabs. The extension runs regardless of the user being logged in. A person can sign up using Google Oauth which changes the user’s state in the extension and incorporates http requests to the server so the webpage can display the user’s tab information.</p>',
-        'technologies': 'Javascript, ReactJS, Chrome Extension, Chrome Platform API, XMLHTTPRequest, HTML5, CSS3, Node, MySQL, Google OAuth, Axios ',
+        'technologies': 'Javascript, ReactJS, Chrome Extension, Chrome Platform API, XMLHTTPRequests, HTML5, CSS3, Node, MySQL, Google OAuth, Axios ',
         'liveSiteUrl': 'http://www.closeyourtabs.com',
         'githubUrl': 'https://github.com/andreasandpiper/closeyourtabs-chrome-extension',
         'imageSrc': 'img/images/closeyourtabs.jpg'
@@ -64,6 +64,14 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
         }, 500);
+        $('.navbar-collapse').removeClass('in');
+        $('.navbar-collapse').attr('aria-expanded', false);
+        return false;
+    })
+
+    $(window).on('scroll', function () {
+        $('.navbar-collapse').removeClass('in');
+        $('.navbar-collapse').attr('aria-expanded', false);
         return false;
     })
 
