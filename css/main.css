@@ -626,6 +626,12 @@ label.valid {
    Responsive Settings
    ========================================================================== */
 
+@media(max-width:1172px) {
+    .text h5 {
+        font-size: .7em;
+    }
+}
+
 @media(max-width:992px) {
     #page-profile .profile {
         margin: 0 auto 20px auto;
@@ -634,6 +640,9 @@ label.valid {
         width: 900px;
         height: 900px;
         /* control height here */
+    }
+    .text h5 {
+        font-size: 1em;
     }
 }
 
