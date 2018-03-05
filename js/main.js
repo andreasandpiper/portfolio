@@ -106,24 +106,31 @@ $(document).ready(function () {
         offset: 'bottom-in-view'
     });
 
-    $('.overlay').on('click', function () {
-        var projectInfo = $(this).closest('.portfolio-div').attr('data-title');
-        var projectTitle = portfolioInfo[projectInfo].title;
-        var projectDescript = portfolioInfo[projectInfo].description;
-        var projectImage = portfolioInfo[projectInfo].imageSrc;
-        var projectTech = portfolioInfo[projectInfo].technologies;
-        var liveLink = portfolioInfo[projectInfo].liveSiteUrl;
-        var gitHubLink = portfolioInfo[projectInfo].githubUrl;
-        $("#portfolioModal").find('.modal-title').text(projectTitle);
-        $("#portfolioModal").find('.modal-body .description').html(projectDescript);
-        $("#portfolioModal").find('.modal-body img').attr('src', projectImage);
-        $("#portfolioModal").find('.modal-body span').html(projectTech);
-        $("#portfolioModal").find('.modal-body .live').attr('href', liveLink);
-        $("#portfolioModal").find('.modal-body .github').attr('href', gitHubLink);
-        if (gitHubLink === '') {
-            $("#portfolioModal").find('.modal-body .github').text('');
-        }
-        $('#portfolioModal').modal('show');
-    })
+    $('.overlay').on('click', showProjectInfo)
+
+
 
 });
+
+function showProjectInfo() {
+    var projectInfo = $(this).closest('.portfolio-div').attr('data-title');
+    var projectTitle = portfolioInfo[projectInfo].title;
+    var projectDescript = portfolioInfo[projectInfo].description;
+    var projectImage = portfolioInfo[projectInfo].imageSrc;
+    var projectTech = portfolioInfo[projectInfo].technologies;
+    var liveLink = portfolioInfo[projectInfo].liveSiteUrl;
+    var gitHubLink = portfolioInfo[projectInfo].githubUrl;
+    $("#portfolioModal").find('.modal-title').text(projectTitle);
+    $("#portfolioModal").find('.modal-body .description').html(projectDescript);
+    $("#portfolioModal").find('.modal-body img').attr('src', projectImage);
+    $("#portfolioModal").find('.modal-body span').html(projectTech);
+    $("#portfolioModal").find('.modal-body .live').attr('href', liveLink);
+    $("#portfolioModal").find('.modal-body .github').attr('href', gitHubLink);
+    if (gitHubLink === '') {
+        $("#portfolioModal").find('.modal-body .github').hide();
+    } else {
+        $("#portfolioModal").find('.modal-body .github').show();
+
+    }
+    $('#portfolioModal').modal('show');
+}
