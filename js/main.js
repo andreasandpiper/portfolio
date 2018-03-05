@@ -103,16 +103,15 @@ $(document).ready(function () {
 
     /* Charts*/
 
-    $('.chart').waypoint(function () {
-        $(this).easyPieChart({
-            barColor: '#3498db',
-            size: '150',
-            easing: 'easeOutBounce',
-        });
-    }, {
-        triggerOnce: true,
-        offset: 'bottom-in-view'
-    });
+    // $('.chart').waypoint(function () {
+    //     $(this).easyPieChart({
+    //         barColor: '#3498db',
+    //         easing: 'easeOutBounce',
+    //     });
+    // }, {
+    //     triggerOnce: true,
+    //     offset: 'bottom-in-view'
+    // });
 
     $('.overlay').on('click', showProjectInfo)
 

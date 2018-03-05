@@ -497,10 +497,6 @@ label.valid {
 .chart {
     position: relative;
     display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -508,6 +504,10 @@ label.valid {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.chart h3 {
+    font-size: 1em;
 }
 
 .percent {
@@ -644,6 +644,9 @@ label.valid {
     }
     .text h5 {
         font-size: 1em;
+    }
+    .skills h3 {
+        font-size: .7em;
     }
 }
 
