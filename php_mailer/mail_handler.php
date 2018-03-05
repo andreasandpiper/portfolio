@@ -12,25 +12,25 @@ $output = [
 //Sanitize name field
 $message['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 if(empty($message['name'])){
-    $ouput['success'] = false;
-    $ouput['messages'][] = 'missing name key';
+    $output['success'] = false;
+    $output['messages'][] = 'missing name key';
 }
 
 //validate email field
 $message['email'] = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 if(empty($message['email'])){
-    $ouput['success'] = false;
-    $ouput['messages'][] = 'invalid email key';
+    $output['success'] = false;
+    $output['messages'][] = 'invalid email key';
 }
 
 $message['message']= filter_var($_POST['message'],  FILTER_SANITIZE_STRING);
 if(empty($message['message'])){
-    $ouput['success'] = false;
-    $ouput['messages'][] = 'missing message key';
+    $output['success'] = false;
+    $output['messages'][] = 'missing message key';
 }
 
-if($ouput['success'] !== null){
-    echo json_encode($ouput);
+if($output['success'] !== null){
+    echo json_encode($output);
     exit();
 }
 
@@ -76,7 +76,7 @@ if(!$mail->send()) {
     $output['success'] = false;
     $output['messages'][] = $mail->ErrorInfo;
 } else {
-    $ouput['success'] = true;
+    $output['success'] = true;
 }
 echo json_encode($output);
 ?>
