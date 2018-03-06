@@ -13,7 +13,7 @@ var portfolioInfo = {
         'technologies': 'HTML, CSS, JavaScript, jQuery',
         'liveSiteUrl': '#',
         'githubUrl': '#',
-        'imageSrc': 'img/images/elementGame.png'
+        'imageSrc': 'img/images/elementgame-homepage.jpg'
     },
     'hawkandheron': {
         'title': 'The Hawk and Heron',
