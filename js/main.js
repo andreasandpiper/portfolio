@@ -5,7 +5,7 @@ var portfolioInfo = {
         'technologies': 'HTML, CSS, Javascript, JQuery',
         'liveSiteUrl': 'projects/calculator/',
         'githubUrl': 'https://github.com/andreasandpiper/calculator-javascript',
-        'imageSrc': 'img/images/calculator.png'
+        'imageSrc': 'img/images/calculator.jpg'
     },
     'memoryMatch': {
         'title': 'Memory Match',
@@ -21,7 +21,7 @@ var portfolioInfo = {
         'technologies': 'HTML, CSS, Bootstrap, Jekyll, Liquid templating, GitHub Pages',
         'liveSiteUrl': 'http://thehawkandheron.com',
         'githubUrl': 'https://github.com/andreasandpiper/andreasandpiper.github.io',
-        'imageSrc': 'img/images/hawkandheron.png'
+        'imageSrc': 'img/images/hawkandheron.jpg'
     },
     'sbbikepark': {
         'title': 'Santa Barbara Bike Park',
@@ -29,7 +29,7 @@ var portfolioInfo = {
         'technologies': 'CSS, HTML, Wordpress, sFTP',
         'liveSiteUrl': 'https://www.sbbikepark.com',
         'githubUrl': '',
-        'imageSrc': 'img/images/sbbikepark.png'
+        'imageSrc': 'img/images/sbbikepark.jpg'
     },
     'beetsandeats': {
         'title': 'Beets & Eats',
@@ -37,7 +37,7 @@ var portfolioInfo = {
         'technologies': 'HTML, CSS, JQuery, AJAX, Google Maps API, Yelp API, Ticketmaster API, Bootstrap',
         'liveSiteUrl': 'projects/beetsandeats/',
         'githubUrl': 'https://github.com/andreasandpiper/beetsandeats',
-        'imageSrc': 'img/images/beetsandeats.png'
+        'imageSrc': 'img/images/beetsandeats.jpg'
     },
     'closeyourtabs': {
         'title': 'Close Your Tabs',
