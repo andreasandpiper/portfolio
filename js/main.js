@@ -9,8 +9,8 @@ var portfolioInfo = {
     },
     'memoryMatch': {
         'title': 'Memory Match',
-        'description': '<p>Created a memory match game that adds a twist to the normal game. The player must find all the element matches before losing all three lives. However, the game board can change based on finding molecule combinations. For example, Hydrogen and Chlorine create hydrochloric acid, which causes the player to loose a life. The game incorporate animated effects, countdowns, and board shuffles. <p></p>I was inspired to create a science game based on my background of being a science teacher. The periodic table is iconic to science, and I wanted to create a game where people could learn some information about elements and molecules by playing a fun game. </P>',
-        'technologies': 'HTML, CSS, JavaScript, jQuery',
+        'description': '<p>Created a memory match game that adds a twist to the normal game. The player must find all the element matches before losing all three lives. However, the game board can change based on finding molecule combinations. For example, Hydrogen and Chlorine create hydrochloric acid, which causes the player to loose a life. The game incorporate animated effects, countdowns, and board shuffles. <p></p>I was inspired to create a science game based on my background of being a science teacher. The periodic table is iconic to science, and I wanted to create a game where people could learn some information about elements and molecules by playing a fun game. </p>',
+        'technologies': 'Python, Flask, Heroku, Jinja2, HTML, CSS, JavaScript, jQuery, Git',
         'liveSiteUrl': 'https://memorymatch-flask.herokuapp.com/',
         'githubUrl': 'https://github.com/andreasandpiper/flask-memorymatch',
         'imageSrc': 'img/images/elementgame-homepage.jpg'
