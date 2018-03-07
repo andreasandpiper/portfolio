@@ -3,7 +3,7 @@ var portfolioInfo = {
         'title': 'Calculator',
         'description': '<p>Designed and developed a basic calculator to compute basic calculations using order of operations. The user input displays on the screen and computes the input when the equal sign is clicked. Each button creates an object which is filtered before calculating. The filtered input then uses objects to calculate the order of operations then uses function for the different operands. I use operands as keys to perform basic subtraction, addition, multiplication and division. </p>',
         'technologies': 'HTML, CSS, Javascript, JQuery',
-        'liveSiteUrl': '#',
+        'liveSiteUrl': 'http://calculator.andreawayte.com',
         'githubUrl': 'https://github.com/andreasandpiper/calculator-javascript',
         'imageSrc': 'img/images/calculator.jpg'
     },
