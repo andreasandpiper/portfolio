@@ -3,16 +3,16 @@ var portfolioInfo = {
         'title': 'Calculator',
         'description': '<p>Designed and developed a basic calculator to compute basic calculations using order of operations. The user input displays on the screen and computes the input when the equal sign is clicked. Each button creates an object which is filtered before calculating. The filtered input then uses objects to calculate the order of operations then uses function for the different operands. I use operands as keys to perform basic subtraction, addition, multiplication and division. </p>',
         'technologies': 'HTML, CSS, Javascript, JQuery',
-        'liveSiteUrl': '#',
+        'liveSiteUrl': 'http://calculator.andreawayte.com',
         'githubUrl': 'https://github.com/andreasandpiper/calculator-javascript',
         'imageSrc': 'img/images/calculator.jpg'
     },
     'memoryMatch': {
         'title': 'Memory Match',
-        'description': '<p>Created a memory match game that adds a twist to the normal game. The player must find all the element matches before losing all three lives. However, the game board can change based on finding molecule combinations. For example, Hydrogen and Chlorine create hydrochloric acid, which causes the player to loose a life. The game incorporate animated effects, countdowns, and board shuffles. <p></p>I was inspired to create a science game based on my background of being a science teacher. The periodic table is iconic to science, and I wanted to create a game where people could learn some information about elements and molecules by playing a fun game. </P>',
-        'technologies': 'HTML, CSS, JavaScript, jQuery',
-        'liveSiteUrl': '#',
-        'githubUrl': '#',
+        'description': '<p>Created a memory match game that adds a twist to the normal game. The player must find all the element matches before losing all three lives. However, the game board can change based on finding molecule combinations. For example, Hydrogen and Chlorine create hydrochloric acid, which causes the player to loose a life. The game incorporate animated effects, countdowns, and board shuffles. </p><p>I was inspired to create a science game based on my background of being a science teacher. The periodic table is iconic to science, and I wanted to create a game where people could learn some information about elements and molecules by playing a fun game. </p>',
+        'technologies': 'Python, Flask, Heroku, Jinja2, HTML, CSS, JavaScript, jQuery, Git',
+        'liveSiteUrl': 'https://memorymatch-flask.herokuapp.com/',
+        'githubUrl': 'https://github.com/andreasandpiper/flask-memorymatch',
         'imageSrc': 'img/images/elementgame-homepage.jpg'
     },
     'hawkandheron': {
@@ -35,7 +35,7 @@ var portfolioInfo = {
         'title': 'Beets & Eats',
         'description': '<p>Beets and Eats is an application to help users plan an evening out on the town. To use the application, users enter a location and date to populate a visual list of the events happening on that date. Links to the events and Ticketmaster are available for each event.  Once an event is chosen, the map will populate many nearby food and drink locations. When a location a click, more information including links are provided. </p><p> My contribution to this 2-day Hackathon project was using information from Ticketmaster and Yelp to populate a Google map with nearby locations. I used closures to populate the sidebar with more information once the user clicked an icon as well as displaying basic information in a label window.  </p><p>Beets and Eats uses data from GoogleMaps, Ticketmaster and Yelp to populate a map with restaurants and bars surrounding a desired event venue. </p>',
         'technologies': 'HTML, CSS, JQuery, AJAX, Google Maps API, Yelp API, Ticketmaster API, Bootstrap',
-        'liveSiteUrl': '#',
+        'liveSiteUrl': 'http://beetsandeats.andreawayte.com',
         'githubUrl': 'https://github.com/andreasandpiper/beetsandeats',
         'imageSrc': 'img/images/beetsandeats.jpg'
     },
