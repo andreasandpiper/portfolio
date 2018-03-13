@@ -2,7 +2,7 @@
 
 Rewrite a Bootstrap template to display my skills and a colorful and user-friendly way!
 
-![Articulate Template](https://wrapbootstrap.com/theme/articulate-resume-portfolio-WB0N5LC7P)
+[Articulate Template](https://wrapbootstrap.com/theme/articulate-resume-portfolio-WB0N5LC7P)
 
 
 ## Rewrite the Template
