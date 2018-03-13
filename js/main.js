@@ -126,7 +126,6 @@ function showProjectInfo() {
         $("#portfolioModal").find('.modal-body .github').hide();
     } else {
         $("#portfolioModal").find('.modal-body .github').show();
-
     }
     $('#portfolioModal').modal('show');
 }
