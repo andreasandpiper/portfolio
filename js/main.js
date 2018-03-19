@@ -13,7 +13,7 @@ var portfolioInfo = {
         'technologies': 'Python, Flask, Heroku, Jinja2, HTML, CSS, JavaScript, jQuery, Git',
         'liveSiteUrl': 'https://memorymatch-flask.herokuapp.com/',
         'githubUrl': 'https://github.com/andreasandpiper/flask-memorymatch',
-        'imageSrc': 'img/images/elementgame-homepage.jpg'
+        'imageSrc': 'img/images/elementGame.jpg'
     },
     'hawkandheron': {
         'title': 'The Hawk and Heron',
