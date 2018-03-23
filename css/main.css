@@ -85,6 +85,16 @@ p {
     background: none;
 }
 
+.navbar-brand {
+    position: relative
+}
+
+.navbar-brand img {
+    position: absolute;
+    top: 50%;
+    margin-top: -44%;
+}
+
 /* ==========================================================================
   Layout
    ========================================================================== */
