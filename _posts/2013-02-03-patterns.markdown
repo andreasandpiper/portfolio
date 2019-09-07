@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "General solutions to common problems"
+date:   2019-02-03
+categories: [ruby]
+excerpt_separator: <!--more-->
+---
+
+Writing down what I learn is a general solution for my common problem: I forget lots of things. I found this in my notes, and it needed a home:
+
+Design patterns are general solutions to common problems. A pattern in a guideline for flexible and resilient code design. These problems can be implemented in many different programming languages.
+<!--more-->
+
+**The Observer Pattern**
+
+An object maintains a list of dependents (observers) and notifies them automatically of any state changes by calling a method on the observers, often named update. 
+
+Often used in event driven programming, the subject (which is being observed), and when its state changes this is communicated to the observers. To decouple the direct knowledge of each other, the pub-sub pattern often uses a message queue server which is accessed by the observers, so they subscribe to certain types of messages, only knowing about the message, not the source of the message, and vice versa. 
+
+**Inheritance**
+
+When you find yourself overwriting methods in the super class, you aren't using inheritance well, code is duplicated across classes. Hard to gain knowledge about all ducks from the super class. Changing the super class affects other ducks. 
+
+**Interfaces**
+
+Allows different classes to share similarities (other specific classes), and not all classes need to have the same behavior. But destroys code reuse, since there are many interfaces to choose from. 
+
+**Principles**
+
+#1 Identify the aspects of your code that vary and separate them from what stays the same. 'Encapsulate what varies', pull them out at separate. By isolating what changes, this makes code more flexible for future changes. 
+#2 Program to an interface, not on implementation. 'has-A' relationship. The interfaces are a class that implements a specific behavior. 
+class Quack implements QuackBehavior.

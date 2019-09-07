@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "Using Amazon S3 to store images for React on Rails"
+date:   2018-04-19
+categories: [ruby]
+excerpt_separator: <!--more-->
+---
+A tutorial to set up Amazon S3 to store images for your Rails app on Heroku!
+
+<!--more-->
+As a new developer, I am constantly learning new things. This is both exciting and terrifying, and luckily there are many developers out there who contribute their knowledge to help us. I found myself reading many tutorials to do this, and decided I should give back and write about how I implemented image uploading with S3 storage.
+
+Heroku — A cloud platform used for deploying applications using git, and includes lots of documentation for Rails applications.
+
+Paperclip — A file attachment library for Rails models.
+
+S3 — Cloud storage service provided by Amazon.
+
+How it works:
+
+Long story short, an image file will be sent from the client to the server, which is then sent to S3 for storage and receives a url for the image, in which Paperclip attaches to the model. It may sound like a lot of work, but these handy gems do most of the work for us!
+
+Step 1: Get AWS credentials and set up S3 Bucket
+
+Follow the AWS docs for instructions to set up a bucket.
+
+Once you’ve set up your bucket, you need to set up the permissions. Head over to the S3 page and click the bucket you just made. Click the Permissions tab and you will set up both the Bucket Policy and CORS configuration (if you are using cross-origin requests).
+
+For the bucket policy, click Policy Generator and fill in. Copy and paste the JSON file into the editor and save. Next, for CORS configuration copy, edit and paste this:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin> http://localhost:3000 </AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+
+Repeat the process to create a bucket for production, just remember to replace localhost with your address!
+
+Step 2: Set up Gemfile and configs
+
+gem 'paperclip'gem 'aws-sdk-s3', '~> 1'gem 'aws-sdk-ec2', '~> 1'
+
+Don’t forget to bundle install!
+
+Next, add the configurations. Make sure to change the values depending on your region. You can find the region codes here.
+
+In config/environments/development.rb...Paperclip.options[:command_path] = "/usr/bin/"config.paperclip_defaults = {    storage: :s3,    s3_host_name: 's3-us-east-2.amazonaws.com',    s3_credentials: {       bucket: ENV.fetch('S3_BUCKET_NAME'),       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),       s3_region: ENV.fetch('AWS_REGION'),    }}
+
+Add the above code to config/environments/production.rb as well!
+
+Now you need to set your environment variables in both your development and production (Heroku).
+
+For development, you can either use Figaro, or add to your ~/.bashrc file.
+
+export S3_BUCKET_NAME="INSERT_BUCKET_NAME"
+export AWS_ACCESS_KEY_ID="INSERT_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY="INSERT_SECRET_ACCESS_KEY_ID"
+export AWS_REGION="us-east-2" //change to your region
+
+For production on heroku:
+
+heroku config:set S3_BUCKET_NAME="INSERT_BUCKET_NAME"
+heroku config:set AWS_ACCESS_KEY_ID="INSERT_ACCESS_KEY_ID"
+heroku config:set AWS_SECRET_ACCESS_KEY="_SECRET_ACCESS_KEY_ID"
+heroku config:set AWS_REGION="us-east-2"
+
+Step 3: Rails Set Up
+
+Since we will be receiving a url from S3, we need to attach the file to the model. Update the model to attach the file.
+
+class Post < ActiveRecord::Base
+
+  has_attached_file :image, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '500x500#>'
+  }
+
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]end
+
+Then create a migration for the image url
+
+$ rails g migration AddImageToPost
+
+Since you are changing the column, create up/down methods in case you ever need to rollback.
+
+class AddImageFileToPosts < ActiveRecord::Migration[5.1]   def self.up      add_attachment :posts, :image   end   def self.down      remove_attachment :posts, :image   endend
+
+Now you are set up to migrate your database and update the schema.
+
+$ rails db:migrate
+
+Once migrated, you will notice the following columns added to the model:
+
+create_table "posts", force: :cascade do |t|   ....   t.string "image_file_name"   t.string "image_content_type"   t.integer "image_file_size"   t.datetime "image_updated_at"
+end
+
+Step 4: Upload Form
+
+Set up your Form Component to save the file data to the component state. When the file changes, save the file data from the event target. On submit, use the multi-part form header as well as a FormData object along with request.
+
+import axios from 'axios'; constructor(props){
+    super(props);
+    this.state = {
+      file: ''
+  }
+}handleSubmit(event){
+    event.preventDefault();
+    let fileData = new FormData();    fileData.append('imagefile', this.state.file);   axios({method: 'post', url: '/posts.json', data: fileData,   headers: {'Content-Type': 'multipart/form-data'}}).then(resp => {
+      //update state or whatever you want to do with the resp
+    }).catch( err => {
+      //catch the error
+    })
+  }fileChange(event){
+    const { value } = event.target;     let ifImage = (/\.(gif|jpg|jpeg|png)$/i).test(value)    if(!ifImage){
+      return;
+    }     this.setState({...this.state, file: event.target.files[0])}
+}render(){   return (
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <div className="field">
+            <label className="label">Upload image</label>
+            <div className="control">
+              <input className="input" type="file" name="file" value={filename} onChange={this.fileChange.bind(this)}/>
+            </div>
+          </div>
+            <button className="button is-link">Submit</button>
+          </div>
+        </form>
+    )
+  }
+
+Step 5: Set up Rails Controller
+
+This is where all the behind the scenes gem magic happens. All you have to do is create new and save. Nothing out of the ordinary here.
+
+def create
+    @post = Post.new(post_params)
+
+    if @post.save
+          render json: post
+    else
+         render json: @post.errors.full_messages
+    end
+end
+
+Viola!
+
+Now, accessing the image is a simple as …
+
+post.image.url
