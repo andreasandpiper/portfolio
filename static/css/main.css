@@ -16,10 +16,10 @@ hr {
 span.time, span.categories {
   color: #ADADAD;
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 12px;
 }
 h1, h2, h3 {
-  color: #FBC412;
+  color: #00A9B2;
   font-weight: normal;
 }
 h1 {
@@ -31,10 +31,10 @@ h2, h3 {
 }
 a, a:link, a:active {
   text-decoration: none;
-  color: #FBC412;
+  color: #00A9B2;
 }
 a:hover {
-  color: #B3B3B3;
+  color: #DAB600;
   text-decoration: underline;
 }
 
@@ -76,7 +76,7 @@ footer {
   margin-bottom: 3em;
   padding-top: 10px;
   color: #C2C2C2;
-  font-size: 11px;
+  font-size: 12px;
   bottom: 0;
   padding-bottom: 10px;
 }
@@ -84,7 +84,7 @@ footer {
 /* Left column */
 div.col-sm-3 {
   margin-top: 100px;
-  font-size: 11px;
+  font-size: 12px;
   color: #666;
 }
 div.col-sm-3 strong {

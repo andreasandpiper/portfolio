@@ -1,0 +1,8 @@
+#home {
+  display: flex;
+  justify-content: center;
+}
+
+#home img {
+  margin: 20px;
+}
