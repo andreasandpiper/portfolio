@@ -6,3 +6,5 @@
 #home img {
   margin: 20px;
 }
+
+img[alt=portrait] { width: 200px; }

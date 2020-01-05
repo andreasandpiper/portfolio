@@ -2,7 +2,7 @@ title: Andrea Wayte
 description: All about me
 author: Andrea Wayte
 github: https://github.com/andreasandpiper
-about: Baker. Crafter. Clothing maker. Programmer. Programs in Ruby & JS
+about: Crafter. Clothing maker. Programmer. Baker. Programs in Ruby & JS
 
 enableTags: true
 tagarray: []
@@ -13,12 +13,12 @@ collections:
     permalink: /project/:path/
 
 social:
+    - icon: fa-github
+      link: "https://github.com/andreasandpiper"
     - icon: fa-twitter
       link: "https://twitter.com/andreasandpiper"
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/andrea-wayte/"
-    - icon: fa-github
-      link: "https://github.com/andreasandpiper"
     - icon: fa-file-text
       link: "/static/resume.pdf"
 
@@ -36,8 +36,8 @@ urls:
 
 url: "https://andreasandpiper.github.io"
 baseurl: ""
-paginate: 20
-per_page: 20
+paginate: 5
+per_page: 5
 paginate_path: "/blog/page/:num/"
 markdown: kramdown
 plugins:

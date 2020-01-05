@@ -105,35 +105,49 @@ end
 
 Set up your Form Component to save the file data to the component state. When the file changes, save the file data from the event target. On submit, use the multi-part form header as well as a FormData object along with request.
 ```
-import axios from 'axios'; constructor(props){
+import axios from 'axios';
+
+constructor(props){
     super(props);
     this.state = {
       file: ''
   }
-}handleSubmit(event){
-    event.preventDefault();
-    let fileData = new FormData();    fileData.append('imagefile', this.state.file);   axios({method: 'post', url: '/posts.json', data: fileData,   headers: {'Content-Type': 'multipart/form-data'}}).then(resp => {
-      //update state or whatever you want to do with the resp
-    }).catch( err => {
-      //catch the error
-    })
-  }fileChange(event){
-    const { value } = event.target;     let ifImage = (/\.(gif|jpg|jpeg|png)$/i).test(value)    if(!ifImage){
-      return;
-    }     this.setState({...this.state, file: event.target.files[0])}
-}render(){   return (
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className="field">
-            <label className="label">Upload image</label>
-            <div className="control">
-              <input className="input" type="file" name="file" value={filename} onChange={this.fileChange.bind(this)}/>
-            </div>
-          </div>
-            <button className="button is-link">Submit</button>
-          </div>
-        </form>
-    )
-  }
+}
+
+handleSubmit(event){
+  event.preventDefault();
+  let fileData = new FormData();    
+  fileData.append('imagefile', this.state.file);   
+  axios({method: 'post', url: '/posts.json', data: fileData,   
+  headers: {'Content-Type': 'multipart/form-data'}}).then(resp => {
+    //update state or whatever you want to do with the resp
+  }).catch( err => {
+    //catch the error
+  })
+}
+
+fileChange(event){
+  const { value } = event.target;     
+  let ifImage = (/\.(gif|jpg|jpeg|png)$/i).test(value)    
+  if(!ifImage){
+    return;
+  }     this.setState({...this.state, file: event.target.files[0])}
+}
+
+render(){   
+  return (
+  <form onSubmit={this.handleSubmit.bind(this)}>
+    <div className="field">
+      <label className="label">Upload image</label>
+      <div className="control">
+        <input className="input" type="file" name="file" value={filename} onChange={this.fileChange.bind(this)}/>
+      </div>
+    </div>
+      <button className="button is-link">Submit</button>
+    </div>
+  </form>
+  )
+}
 ```
 ### Step 5: Set up Rails Controller
 
