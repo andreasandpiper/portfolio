@@ -2,7 +2,7 @@ title: Andrea Wayte
 description: All about me
 author: Andrea Wayte
 github: https://github.com/andreasandpiper
-about: Crafter. Clothing maker. Programmer. Baker.
+about: Programmer. Crafter. Clothing maker. Baker. Cyclist.
 
 enableTags: true
 tagarray: []
@@ -29,7 +29,7 @@ share:
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
+    - text: Projects
       url: /projects/
     - text: Blog
       url: /blog/
