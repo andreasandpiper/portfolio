@@ -14,6 +14,7 @@ Rails will serve any file that is located in the public folder, so I used this t
 
 My file structure looks like this:
 
+```
 -app
    //Rails files in here, such as controllers, models, etc
 ...
@@ -27,11 +28,13 @@ My file structure looks like this:
       -index.html
 ...
 -package.json //include Webpack config in here!
+```
 
 I include the package.json file for the client in the root folder so Heroku will follow the instructions to bundle the files when deploying to production. You also need to tell webpack where to place the bundled Javascript file.
 
 Change this in your webpack.config.js…
 
+```
 ...
 output: {
    filename: 'bundle.js',
@@ -39,9 +42,11 @@ output: {
    publicPath: '/app/'
 },
 ...
+```
 
 Now Webpack knows where to place the file. Next we want to configure Node to bundle after dependencies are installed. We do this with heroku-postbuild.
 
+```
 "scripts": {
    "start": "react-scripts start",
    "bundle": "node_modules/.bin/webpack --config   ./client/webpack.deploy.config.js --progress --colors",
@@ -51,14 +56,15 @@ Now Webpack knows where to place the file. Next we want to configure Node to bun
    "build": "react-scripts build",
    "watch": "webpack --config ./client/webpack.config.js --watch",
    "heroku-postbuild": "npm run bundle"
-},
+}
+```
 
 Make sure to set up a Heroku buildpack. You can do this in the Heroku CLI.
 
+```
 heroku buildpacks:clear
 heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add heroku/ruby --index 2
-
-In order to set up the build pack, I followed this tutorial.
+```
 
 Now you are all set to develop a React/Rails project! All you got to do is npm run watch and rails server and start building!

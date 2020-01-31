@@ -23,7 +23,7 @@ Transitional consistency - which attributes need to be updated together in t
 
 When you extract attributes into smaller classes, you've created a bounded context!
 
-#### Dependency directions
+**Dependency directions**
 
 Sometimes there is a class that can read from other things, but the problem with this is that the class is reliant on the other classes, and limited in what in what it can do. For instance, it can not remove without deleting the other record. 
 Another solution is for data to be published from one bounded context and consumed by another bounded context, resulting in its own storage. Usually this is used when the context needs less data than what was published.
@@ -31,14 +31,14 @@ Since the Active Record API is so wide, it is easy to expose data from other pat
 So how do you expose data from one part to another via an interface?
 Create an interface connecting the two parts (contexts).
 
-#### Value Objects
+**Value Objects**
 
 describe, quantify, or measure an entity, such as Product or Order. Value objects have no identity, are are compared by the values they encapsulate, are are immutable. They are meant to pass information around, instead of passing solely attributes. 
 
-#### Entities
+**Entities**
 
 a domain object with a unique identity, usually mutable, can have a lifecycle, and attributes/value objects describing it. 
 
-#### Aggregates
+**Aggregates**
 
 a graph of domain objects you could load from the database, often seen as a cluster of objects. So if we change them, they should fully work or fail and rollback. Aggregates are used to protect business logic/requirements. The idea is to have small clusters of objects that do not easily cross each other.
