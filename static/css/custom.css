@@ -7,4 +7,22 @@
   margin: 20px;
 }
 
+.author-name {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.sidebar-nav li {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#blog > h1 a, .blog-list h3 {
+  color: #DAB600;
+}
+
 img[alt=portrait] { width: 200px; }
