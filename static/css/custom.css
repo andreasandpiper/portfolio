@@ -7,13 +7,17 @@
   margin: 20px;
 }
 
+.profile-about {
+  font-size: 14px;
+}
+
 .author-name {
   font-size: 30px;
   font-weight: 600;
 }
 
 .sidebar-nav li {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -25,4 +29,8 @@ a:hover {
   color: #DAB600;
 }
 
+#about a span {
+  color: #000000;
+  padding-left: 5px;
+}
 img[alt=portrait] { width: 200px; }
