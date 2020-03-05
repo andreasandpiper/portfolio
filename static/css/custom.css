@@ -1,10 +1,11 @@
 #home {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 #home img {
   margin: 20px;
+  width: 100%;
 }
 
 .profile-about {
@@ -33,4 +34,16 @@ a:hover {
   color: #000000;
   padding-left: 5px;
 }
+
+#about .skills li {
+  list-style-type: none;
+}
+
+#about .skills span {
+  font-weight: 500;
+}
 img[alt=portrait] { width: 200px; }
+
+.social li a {
+  font-size: 30px;
+}
