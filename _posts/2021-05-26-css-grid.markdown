@@ -1,0 +1,199 @@
+---
+layout: post
+title: "CSS Grid: An Overview"
+date: 2021-03-03
+categories: [css, css grid]
+excerpt_separator: <!--more-->
+---
+
+It's time to learn something new. I've spent time working with flexbox, but haven't explored CSS Grid. Let's go.
+
+I've noticed the most common claim to use CSS Grid is to have a 2 dimensional layout or both columns _AND_ rows, instead of just columns _OR_ rows.
+
+# Grid Container
+
+This is the element that contains the grid. Define this by giving the element the css property `display: grid` for block level grid, or `inline-grid` for inline. Similar to display inline-block.
+
+### Grid Container Properties
+
+##### `grid-template` - A shorthand for the following
+
+- **_grid-template-columns, grid-template-rows_**
+
+This determine the number and shape of the grid. These two rules state that there should be two columns, each with a width of 100px, and two rows, each with their height set to auto.
+
+```
+.container {
+	display: grid;
+	grid-template-columns: 100px 100px;
+	grid-template-rows: auto auto;
+}
+```
+
+If you want gaps between the rows and column use `grid-column-gap` and `grid-row-gap`. There is a shorthand for both properties, `grid-gap`.
+
+- **_grid-template-areas_**
+  This is used to spread content into multiple grid cells. Repeating the name of a grid area causes the content to span those cells.
+
+```
+.container {
+  grid-template-areas:
+    "sidebar | . | none | ...";
+}
+```
+
+- **_grid-area_**
+  This prop is used by the grid-template-area. Give the elements this property and a name
+
+```
+.item-3 {
+grid-areas: "sidebar";
+}
+```
+
+**Put it all together and it will look something like this**
+
+```
+.item-1 {
+  grid-area: header;
+}
+.item-2 {
+  grid-area: main;
+}
+.item-3 {
+  grid-area: sidebar;
+}
+.item-4 {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main ."
+    "footer footer footer footer";
+}
+```
+
+### Positioning of items in the grid
+
+Just like flexbox, the parent can specify the position of it's children, or grid item.
+
+- **_justify-items_**
+  Aligns grid items along the _row_ axis
+
+```
+.container {
+  justify-items: start | end | center | stretch;
+}
+```
+
+- **_align-items_**
+  Aligns grid items along the _column_ axis
+
+```
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+
+- **_place-items_**
+  First value sets _align-items_ and second value sets _justify-items_
+
+```
+.container {
+  place-items: start end;
+}
+```
+
+- **_justify-content_**
+  Used to horizontal align the items in the grid, similar to flexbox.
+
+```
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+- **_align-content_**
+  Used to vertical align the items in the grid, similar to flexbox.
+
+```
+.container {
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+- **_place-content_**
+  Sets both the align-content and justify-content properties.
+
+```
+.container {
+  place-items: start end;
+}
+```
+
+# Grid Items (children)
+
+These are the children (direct descendents) of the grid container element.
+
+### Grid Item Properties
+
+- **_grid-column-start_**
+- **_grid-column-end_**
+- **_grid-row-start_**
+- **_grid-row-end_**
+
+Determines the grid items location, can use a grid number or name. Can also include how many grids to span. You can think of this as the item box, and you can determine how many rows and columns it will span.
+
+Can use `grid-column` and `grid-row` as the shorthand
+
+```
+.item {
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}
+
+.item-c {
+  grid-column: 3 / span 2;
+  grid-row: third-line / 4;
+}
+```
+
+- **_grid-area_**
+  Gives an item a name, more info in container section
+
+- **_justify-self_**
+  Aligns self horizontally
+
+```
+.item {
+  justify-self: start | end | center | stretch;
+}
+```
+
+- **_align-self_**
+  Aligns item vertically
+
+```
+.item {
+  align-self: start | end | center | stretch;
+}
+```
+
+Now the ultimate test...try it out!
+
+[Tic Tac Toe](https://codepen.io/andrea-ith/pen/qBrVNOb)
+
+## Resources
+
+- [https://css-tricks.com/snippets/css/complete-guide-grid/](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+```
+
+```
