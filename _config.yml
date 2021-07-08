@@ -21,6 +21,8 @@ social:
       link: "https://www.linkedin.com/in/andrea-wayte/"
     - icon: fa-file-text
       link: "/static/resume.pdf"
+    - icon: fa-codepen
+      link: "https://codepen.io/andrea-ith/pens/"
 
 share:
   twitter_username: andreasandpiper
